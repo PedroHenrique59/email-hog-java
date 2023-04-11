@@ -13,6 +13,9 @@ import java.io.Serializable;
 @RequestScoped
 public class EmailBean implements Serializable {
 
+    private static final String DESTINATARIO = "tadeu@gmail.com";
+    private static final String ASSUNTO = "Mudança de senha!";
+
     @Inject
     private EmailService emailService;
 
@@ -23,7 +26,7 @@ public class EmailBean implements Serializable {
 
     private Email montarEmail() {
         EmailLayout layout = new EmailLayout();
-        return layout.montarEmailAdministrador("tadeu@gmail.com", "Mudança de senha!");
+        return layout.montarEmailAdministrador(DESTINATARIO, ASSUNTO);
     }
 
 }
